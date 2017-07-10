@@ -13,7 +13,7 @@ def test_reproducible():
     """Check that walk is producing the same sequence as previous version of the code."""
     testdata_now = generate_testdata.compute_testdata()
 
-    with open('./testdata.json', 'r') as fd:
+    with open('tests/testdata.json', 'r') as fd:
         testdata_reference = json.load(fd)
 
     assert testdata_now == testdata_reference
