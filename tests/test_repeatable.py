@@ -1,7 +1,6 @@
 import random
-
 import dotdot
-import walk
+from walk import walk
 
 
 def test_repeatable():
@@ -10,4 +9,4 @@ def test_repeatable():
         seed = random.randint(0, 100000)
         n    = random.randint(0, 1000)
 
-        assert walk.walk(n, seed=seed) == walk.walk(n, seed=seed)
+        assert walk(n, seed=seed) == walk(n, seed=seed)

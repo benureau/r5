@@ -7,9 +7,9 @@ other test this one should be present.
 It also provides a minimal example of how to use the code.
 """
 import dotdot
-import walk
+from walk import walk
 
 
 def test_rerunnable():
     """Return a walk of 10 elements"""
-    return walk.walk(10, seed=1)
+    return walk(10, seed=1)
