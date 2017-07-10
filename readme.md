@@ -1,7 +1,7 @@
-# R5 --- Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions
+# R5 — Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions
 
 
-Code for the `Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions` by Fabien C. Y. Benureau and Nicolas Rougier.
+Code for the `Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions` by Fabien C. Y. Benureau and Nicolas P. Rougier.
 
 
 ## Installation
