@@ -6,16 +6,14 @@ We use JSON rather than a binary format such as pickle, for two reasons:
   compared against in the context of a replication effort.
 """
 import json
-
-import dotdot
-import walk
+import r5
 
 
 def compute_testdata():
     """Generate the data to test"""
-    return [walk.walk(28, seed= 0),
-            walk.walk(47, seed= 1),
-            walk.walk(99, seed=99)]
+    return [r5.walk(28, seed= 0),
+            r5.walk(47, seed= 1),
+            r5.walk(99, seed=99)]
 
 def save_testdata(data):
     """Write the test data to disk."""

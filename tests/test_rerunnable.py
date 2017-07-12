@@ -6,10 +6,9 @@ other test this one should be present.
 
 It also provides a minimal example of how to use the code.
 """
-import dotdot
-from walk import walk
+import r5
 
 
 def test_rerunnable():
     """Return a walk of 10 elements"""
-    return walk(10, seed=1)
+    return r5.walk(10, seed=1)
