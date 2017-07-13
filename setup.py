@@ -4,6 +4,7 @@ For details: https://packaging.python.org/en/latest/distributing.html
 """
 import os
 import setuptools
+import versioneer
 
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -13,7 +14,8 @@ with open(os.path.join(here, 'readme.md'), encoding='utf-8') as fd:
 
 setuptools.setup(
     name='r5',
-    version='0.5.0',
+    version=versioneer.get_version(),   # so we can get the git hash in the version
+    cmdclass=versioneer.get_cmdclass(), # idem.
 
     description='Re-run, Repeat, Reproduce, Reuse, Replicate',
     long_description=long_description,
@@ -48,21 +50,16 @@ setuptools.setup(
         'Programming Language :: Python :: 3.6',
     ],
 
-
-    # if you have code in folders
-    # packages=setuptools.find_packages(exclude=['contrib', 'docs', 'tests']),
-    # here, we just have a r5.py file
-    py_modules=["r5"],
+    # where is our code
+    packages=['r5'],
 
     # required dependencies
-    install_requires=[],
+    install_requires=['versioneer'],
 
     # you can install extras_require with
     # $ pip install -e .[test]
     extras_require={'test': ['pytest']},
 
-    # .
+    # creates a `r5` command after install
     entry_points={'console_scripts': ['r5=r5:main']},
-
-    # package_data={'r5': ['test/testdata.json']},
 )

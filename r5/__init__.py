@@ -1,22 +1,9 @@
-# Copyright (c) 2017 Nicolas P. Rougier and Fabien C. Y. Benureau
-# Release under the BSD 2-clause license
-# Tested with CPython 3.6 / macOS 10.12.4 / 64 bits architecture
-import random
+# versioneer
+from . import _version
+__version__ = _version.get_versions()['version']
 
 
-def walk(n, seed=1):
-    """ Random walk for n steps """
-    rng = random.Random() # we create an independent RNG for the function
-    rng.seed(seed)
-
-    steps = [0]
-    for i in range(n):
-        if rng.uniform(-1,+1) < 0:
-            steps.append(steps[-1] - 1)
-        else:
-            steps.append(steps[-1] + 1)
-    return steps
-
+from .walker import walk
 
 
 def main():
@@ -41,9 +28,3 @@ def main():
 
     with open("r5_results_s{}_n{}.json".format(args.seed, args.n), "w") as fd:
         json.dump(results, fd)
-
-
-# before install, you can call `python r5.py`
-# after install, you can simply call `r5`
-if __name__ == '__main__':
-    main()
