@@ -1,11 +1,21 @@
 # Copyright (c) 2017 Nicolas P. Rougier and Fabien C. Y. Benureau
 # Release under the BSD 2-clause license
-# Tested with CPython 3.6 / macOS 10.12.4 / 64 bits architecture
+# Tested with CPython 3.6.1 / macOS 10.12.4 / 64 bits architecture
 import random
 
 def walk(n, seed=1):
-    """ Random walk for n steps """
-    rng = random.Random() # we create an independent RNG for the function
+    """
+    Generate a random walk.
+
+    The walk is initialized at zero, and this initial state is included in
+    the walk.
+
+    :param n:     the number of steps of the walk.
+    :param seed:  the seed of for the random number generator. Each walk has an
+                  independent random number generator.
+    """
+    # we create an independent RNG for the function
+    rng = random.Random()
     rng.seed(seed)
 
     steps = [0]
@@ -15,34 +25,3 @@ def walk(n, seed=1):
         else:
             steps.append(steps[-1] + 1)
     return steps
-
-
-
-def main():
-    """Entry point for the `r5` console script"""
-    # handling command line arguments
-    import argparse
-    parser = argparse.ArgumentParser("Random walk")
-    parser.add_argument('--seed', type=int, default=1,
-                        help='seed for random number generator ')
-    parser.add_argument('n', type=int, default=10,
-                        help='number of step(s) to walk')
-    args = parser.parse_args()
-
-    # random walk for n steps
-    x = walk(args.n, seed=args.seed)
-
-    # display & save results
-    import json
-    results = {'seed': args.seed, 'steps': args.n, 'walk': x}
-    for key in ['seed', 'steps', 'walk']:
-        print('{}: {}'.format(key, results[key]))
-
-    with open("r5_results_s{}_n{}.json".format(args.seed, args.n), "w") as fd:
-        json.dump(results, fd)
-
-
-# before install, you can call `python r5.py`
-# after install, you can simply call `r5`
-if __name__ == '__main__':
-    main()

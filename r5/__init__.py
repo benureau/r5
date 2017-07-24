@@ -1,9 +1,8 @@
 import argparse
-import platform
 import json
-from datetime import datetime
 
 from .walker import walk
+from .provenance import provenance
 
 # versioneer
 from . import _version
@@ -20,25 +19,13 @@ def main():
                         help='number of step(s) to walk')
     args = parser.parse_args()
 
-    # get provenance
-    provenance = {'python'   : {'implementation': platform.python_implementation(),
-                                'version'       : platform.python_version_tuple(),
-                                'compiler'      : platform.python_compiler(),
-                                'branch'        : platform.python_branch(),
-                                'revision'      : platform.python_revision()},
-                  'platform' : platform.platform(),
-                  'git_info' : _version.get_versions(),
-                  'timestamp': datetime.utcnow().isoformat()+'Z',  # Z stands for UTC
-                 }
-
     # random walk for n steps
     x = walk(args.n, seed=args.seed)
 
     # display & save results
     results = {'seed': args.seed, 'steps': args.n, 'walk': x,
-               'provenance': provenance}
-    for key in ['seed', 'steps', 'walk']:
-        print('{}: {}'.format(key, results[key]))
-
+               'provenance': provenance()} # include provenance data
     with open("r5_results_s{}_n{}.json".format(args.seed, args.n), "w") as fd:
         json.dump(results, fd)
+    for key in ['seed', 'steps', 'walk']:
+        print('{}: {}'.format(key, results[key]))
