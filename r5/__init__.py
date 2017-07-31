@@ -1,7 +1,8 @@
+import os
 import argparse
 import json
 
-from .walker import walk
+from .walker import walk, walk_full
 from .provenance import provenance
 
 # versioneer
@@ -20,12 +21,16 @@ def main():
     args = parser.parse_args()
 
     # random walk for n steps
-    x = walk(args.n, seed=args.seed)
+    results = walk_ful(args.n, seed=args.seed)
 
     # display & save results
-    results = {'seed': args.seed, 'steps': args.n, 'walk': x,
-               'provenance': provenance()} # include provenance data
     with open("r5_results_s{}_n{}.json".format(args.seed, args.n), "w") as fd:
         json.dump(results, fd)
-    for key in ['seed', 'steps', 'walk']:
+    for key in result.keys():
         print('{}: {}'.format(key, results[key]))
+
+def test():
+    """Run all the tests in the `tests/` directory using pytest """
+    import pytest
+    here = os.path.abspath(os.path.dirname(__file__))
+    pytest.main([os.path.join(here, 'tests')])

@@ -3,6 +3,9 @@
 # Tested with CPython 3.6.1 / macOS 10.12.4 / 64 bits architecture
 import random
 
+from . import provenance
+
+
 def walk(n, seed=1):
     """
     Generate a random walk.
@@ -25,3 +28,13 @@ def walk(n, seed=1):
         else:
             steps.append(steps[-1] + 1)
     return steps
+
+
+def walk_full(n, seed=1):
+    """
+    Generate a random walk, and return it with full provenance data, ready to be saved.
+    """
+    steps = walk(n, seed=seed)
+
+    return {'seed': seed, 'steps': n, 'walk': steps,
+            'provenance': provenance.provenance()}

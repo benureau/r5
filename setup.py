@@ -51,14 +51,14 @@ setuptools.setup(
     ],
 
     # where is our code
-    packages=['r5'],
+    packages=['r5', 'r5.tests'],
 
     # required dependencies
     install_requires=['versioneer'],
 
     # you can install extras_require with
     # $ pip install -e .[test]
-    extras_require={'test': ['pytest']},
+    extras_require={'test': ['pytest', 'pytest-cov']},
 
     # creates a `r5` command after install
     entry_points={'console_scripts': ['r5=r5:main']},

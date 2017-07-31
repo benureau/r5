@@ -6,6 +6,8 @@ We use JSON rather than a binary format such as pickle, for two reasons:
   compared against in the context of a replication effort.
 """
 import json
+import os
+
 import r5
 
 
@@ -17,7 +19,8 @@ def compute_testdata():
 
 def save_testdata(data):
     """Write the test data to disk."""
-    with open('testdata.json', 'w') as fd:
+    here = os.path.abspath(os.path.dirname(__file__))
+    with open(os.path.join(here, 'testdata.json'), 'w') as fd:
         json.dump(data, fd)
 
 
