@@ -1,3 +1,4 @@
+import sys
 import os
 import argparse
 import json
@@ -10,7 +11,8 @@ from . import _version
 __version__ = _version.get_versions()['version']
 
 
-def main():
+def main(argv=sys.argv):
+    print(sys.argv)
     """Entry point for the `r5` console script"""
     # handling command line arguments
     parser = argparse.ArgumentParser("Random walk")
@@ -18,15 +20,15 @@ def main():
                         help='seed for random number generator ')
     parser.add_argument('n', type=int, default=10,
                         help='number of step(s) to walk')
-    args = parser.parse_args()
+    args = parser.parse_args(argv[1:])
 
     # random walk for n steps
-    results = walk_ful(args.n, seed=args.seed)
+    results = walk_full(args.n, seed=args.seed)
 
     # display & save results
     with open("r5_results_s{}_n{}.json".format(args.seed, args.n), "w") as fd:
         json.dump(results, fd)
-    for key in result.keys():
+    for key in results.keys():
         print('{}: {}'.format(key, results[key]))
 
 def test():
