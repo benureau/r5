@@ -30,11 +30,16 @@ def walk(n, seed=1):
     return steps
 
 
-def walk_full(n, seed=1):
+def walk_full(n, seed=1, dirty=False):
     """
     Generate a random walk, and return it with full provenance data, ready to be saved.
+
+    :param dirty:  By default, the presence of a clean git repository is enforced during
+                   provenance data retrieval. Not doing so may miss important uncommited changes
+                   affecting the computation of the result. Set `dirty` to `True` to bypass this
+                   (not recommended).
     """
     steps = walk(n, seed=seed)
 
     return {'seed': seed, 'steps': n, 'walk': steps,
-            'provenance': provenance.provenance()}
+            'provenance': provenance.provenance(dirty=dirty)}

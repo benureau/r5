@@ -1,2 +1,0 @@
-include versioneer.py
-include r5/_version.py

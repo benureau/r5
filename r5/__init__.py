@@ -7,29 +7,8 @@ from .walker import walk, walk_full
 from .provenance import provenance
 
 # versioneer
-from . import _version
-__version__ = _version.get_versions()['version']
+__version__ = '0.5.0'
 
-
-def main(argv=sys.argv):
-    print(sys.argv)
-    """Entry point for the `r5` console script"""
-    # handling command line arguments
-    parser = argparse.ArgumentParser("Random walk")
-    parser.add_argument('--seed', type=int, default=1,
-                        help='seed for random number generator ')
-    parser.add_argument('n', type=int, default=10,
-                        help='number of step(s) to walk')
-    args = parser.parse_args(argv[1:])
-
-    # random walk for n steps
-    results = walk_full(args.n, seed=args.seed)
-
-    # display & save results
-    with open("r5_results_s{}_n{}.json".format(args.seed, args.n), "w") as fd:
-        json.dump(results, fd)
-    for key in results.keys():
-        print('{}: {}'.format(key, results[key]))
 
 def test():
     """Run all the tests in the `tests/` directory using pytest """

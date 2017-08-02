@@ -4,7 +4,8 @@ For details: https://packaging.python.org/en/latest/distributing.html
 """
 import os
 import setuptools
-import versioneer
+
+import r5
 
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -14,8 +15,7 @@ with open(os.path.join(here, 'readme.md'), encoding='utf-8') as fd:
 
 setuptools.setup(
     name='r5',
-    version=versioneer.get_version(),   # so we can get the git hash in the version
-    cmdclass=versioneer.get_cmdclass(), # idem.
+    version=r5.__version__,
 
     description='Re-run, Repeat, Reproduce, Reuse, Replicate',
     long_description=long_description,
@@ -59,7 +59,4 @@ setuptools.setup(
     # you can install extras_require with
     # $ pip install -e .[test]
     extras_require={'test': ['pytest', 'pytest-cov']},
-
-    # creates a `r5` command after install
-    entry_points={'console_scripts': ['r5=r5:main']},
 )
