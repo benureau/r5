@@ -54,7 +54,7 @@ setuptools.setup(
     packages=['r5', 'r5.tests'],
 
     # required dependencies
-    install_requires=['versioneer'],
+    install_requires=['gitpython'],
 
     # you can install extras_require with
     # $ pip install -e .[test]
