@@ -5,8 +5,6 @@ For details: https://packaging.python.org/en/latest/distributing.html
 import os
 import setuptools
 
-import r5
-
 
 here = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(here, 'readme.md'), encoding='utf-8') as fd:
@@ -15,7 +13,7 @@ with open(os.path.join(here, 'readme.md'), encoding='utf-8') as fd:
 
 setuptools.setup(
     name='r5',
-    version=r5.__version__,
+    version='0.5.0',
 
     description='Re-run, Repeat, Reproduce, Reuse, Replicate',
     long_description=long_description,
