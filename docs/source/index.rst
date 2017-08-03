@@ -29,7 +29,7 @@ You can also clone the git repository and install directly::
     cd r5
     python setup.py install
 
-If you wish to edit the code and test the changes without reinstalling it:
+If you wish to edit the code and test the changes without reinstalling it::
 
     python setup.py develop
 
@@ -56,6 +56,8 @@ Reproducible
 
 The main thing that makes the code reproducible is the addition of provenance data function to track the context in which the walk is computed. Along with the parameters used and details about the computer platform and the python version, version control (git) info is also recorded.
 
+.. autofunction:: r5.provenance
+
 It is assumed that the code is executed in its git repository, with no uncommited files. That makes
 the SHA-1 of the current commit a full description of the state of the code used to compute the
 results. If the repository is dirty (uncommited changes or untracked files) or unavailable (if the
@@ -63,12 +65,6 @@ package was installed with `python setup.py install` for instance), the user mus
 the requirement of a clean git repository by set the `dirty` argument to true in the :func:`r5.walk_full` function.
 
 To test reproducibility, the code test if it generate the same result that previous versions of the
-code. You can run the test with:
+code. You can run the test with::
 
     pytest tests/test_reproducible.py
-
-
-r5 module
----------
-
-.. autofunction:: r5.provenance
