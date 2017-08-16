@@ -13,9 +13,9 @@ import r5
 
 def compute_testdata():
     """Generate the data to test"""
-    return [r5.walk(28, seed= 0),
-            r5.walk(47, seed= 1),
-            r5.walk(99, seed=99)]
+    return [r5.walk_full(28, seed= 0, dirty=False),
+            r5.walk_full(47, seed= 1, dirty=False),
+            r5.walk_full(99, seed=99, dirty=False)]
 
 def save_testdata(data):
     """Write the test data to disk."""

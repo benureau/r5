@@ -41,5 +41,5 @@ def walk_full(n, seed=1, dirty=False):
     """
     steps = walk(n, seed=seed)
 
-    return {'seed': seed, 'steps': n, 'walk': steps,
+    return {'parameters': {'n': n, 'seed': seed}, 'results': steps,
             'provenance': provenance.provenance(dirty=dirty)}

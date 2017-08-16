@@ -1,2 +1,11 @@
-gitpython
-pytest
+# Requirement file
+
+# Run `pip install -r requirements.txt` to install the required dependencies
+# of the `r5` package. The exact versions can be requested by removing the `#`
+# in the line below, and amending the version number appropriately. The
+# versions that were used for a specific result are recorded in the provenance
+# data.
+
+GitPython # ==2.1.5
+pytest # ==3.1.3
+pytest-cov # ==2.5.1

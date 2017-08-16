@@ -14,10 +14,13 @@ def test_reproducible_hardcoded():
 
 def test_reproducible():
     """Check that walk is producing the same sequence as previous version of the code."""
-    testdata_now = generate_testdata.compute_testdata()
-
     here = os.path.abspath(os.path.dirname(__file__))
     with open(os.path.join(here, 'testdata.json'), 'r') as fd:
         testdata_reference = json.load(fd)
 
-    assert testdata_now == testdata_reference
+    for testrun in testdata_reference:
+        # the parameters are extracted from the provenance data accompanying the results
+        n    = testrun['parameters']['n']
+        seed = testrun['parameters']['seed']
+        walk_now = r5.walk(n, seed=seed)
+        assert list(walk_now) == list(testrun['results'])
