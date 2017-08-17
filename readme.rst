@@ -2,7 +2,7 @@ Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific C
 ============================================================================================
 
 This is the documentation for the code of the article "Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions"
-by `Fabien C. Y. Benureau`__ and `Nicolas P. Rougier`__. This code is meant as an example of a :math:`\textrm{R}^4` implementation: re-runnable, repeatable, reproducible, and reusable.
+by `Fabien C. Y. Benureau`__ and `Nicolas P. Rougier`__. This code is meant as an example of a R^4 implementation: re-runnable, repeatable, reproducible, and reusable.
 
 __ https://fabien.benureau.com
 __ https://www.labri.fr/perso/nrougier/
@@ -68,7 +68,7 @@ Reusable
 --------
 
 This repository was designed to function as a solid code foundation to start new projects, with
-all the battery of the :math:`\textrm{R}^4` code included. Care has been given to create simple and
+all the battery of the R^4 code included. Care has been given to create simple and
 well-documented code, that is easy to install and use.
 
 A `setup.py` file is provided, along with a `requirement.txt` file that list the dependencies one should install. Examples and tests are included, and the latter are automatically evaluated for each commit pushed to the GitHub
