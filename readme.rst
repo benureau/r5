@@ -1,6 +1,15 @@
 Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions
 ============================================================================================
 
+
+.. image:: https://travis-ci.org/benureau/r5.svg?branch=master
+   :target: https://travis-ci.org/benureau/r5
+.. image:: https://codecov.io/gh/benureau/r5/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/benureau/r5
+.. image:: https://readthedocs.org/projects/r5-/badge/?version=latest
+   :target: http://r5-.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
 This is the documentation for the code of the article "Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions"
 by `Fabien C. Y. Benureau`__ and `Nicolas P. Rougier`__. This code is meant as an example of a R^4 implementation: re-runnable, repeatable, reproducible, and reusable.
 
