@@ -1,9 +1,5 @@
-R5 Documentation
-================
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions
+============================================================================================
 
 This is the documentation for the code of the article "Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions"
 by `Fabien C. Y. Benureau`__ and `Nicolas P. Rougier`__. This code is meant as an example of a :math:`\textrm{R}^4` implementation: re-runnable, repeatable, reproducible, and reusable.
@@ -11,17 +7,12 @@ by `Fabien C. Y. Benureau`__ and `Nicolas P. Rougier`__. This code is meant as a
 __ https://fabien.benureau.com
 __ https://www.labri.fr/perso/nrougier/
 
-This code exposes two central functions, :func:`r5.walk` that generates the walk, and :func:`r5.walk_full` that generates the walk and returns it with full provenance data (parameters, python version, platform, git hash):
-
-.. autofunction:: r5.walk
-
-.. autofunction:: r5.walk_full
-
+This code exposes two central functions, ``r5.walk`` that generates the walk, and ``r5.walk_full`` that generates the walk and returns it with full provenance data (parameters, python version, platform, git hash).
 
 Re-runnable
 -----------
 
-The :mod:`r5` code requires Python 3. The preferred installation method is to clone the existing git repository, and run the code from there. This is necessary to retrieve the git part of the provenance data::
+The ``r5`` code requires Python 3. The preferred installation method is to clone the existing git repository, and run the code from there. This is necessary to retrieve the git part of the provenance data::
 
     git clone https://github.com/benureau/r5
     cd r5
@@ -53,8 +44,6 @@ Reproducible
 ------------
 
 The main thing that makes the code reproducible is the addition of provenance data tracking to record the context in which the walk is computed. This provenance data contains details about the computer platform and the python version, the packages installed and their versions, the version of the code (git SHA1 hash) and the parameters used to generate the results.
-
-.. autofunction:: r5.provenance
 
 It is assumed that the code is executed in its git repository, with no uncommitted files. That makes
 the SHA-1 of the current commit a full description of the state of the code used to compute the
