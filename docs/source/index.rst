@@ -1,10 +1,6 @@
 R5 Documentation
 ================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
 .. image:: https://travis-ci.org/benureau/r5.svg?branch=master
    :target: https://travis-ci.org/benureau/r5
 .. image:: https://codecov.io/gh/benureau/r5/branch/master/graph/badge.svg
