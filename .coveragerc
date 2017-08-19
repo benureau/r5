@@ -1,0 +1,4 @@
+[run]
+omit = 
+    r5/tests/*
+    setup.py

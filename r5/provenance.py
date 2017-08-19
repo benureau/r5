@@ -8,7 +8,11 @@ import git
 
 
 def provenance(dirty=False):
-    """Return provenance data about the execution environment."""
+    """Return provenance data about the execution environment.
+
+    :param dirty:  if False, will exit with an error if the git repository
+                   is dirty or absent.
+    """
     return {'python'   : {'implementation': platform.python_implementation(),
                                 'version' : platform.python_version_tuple(),
                                 'compiler': platform.python_compiler(),
