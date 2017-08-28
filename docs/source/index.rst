@@ -4,24 +4,26 @@ R5 Documentation
 .. toctree::
    reference
 
-   .. image:: https://travis-ci.org/benureau/r5.svg?branch=master
-      :target: https://travis-ci.org/benureau/r5
-      :alt: unit tests
-   .. image:: https://codecov.io/gh/benureau/r5/branch/master/graph/badge.svg
-      :target: https://codecov.io/gh/benureau/r5
-      :alt: test coverage
-   .. image:: https://readthedocs.org/projects/r5-/badge/?version=latest
-      :target: http://r5-.readthedocs.io/en/latest/?badge=latest
-      :alt: documentation
-   .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.848221.svg
-      :target: https://doi.org/10.5281/zenodo.848221
-      :alt: doi
+.. image:: https://travis-ci.org/benureau/r5.svg?branch=master
+   :target: https://travis-ci.org/benureau/r5
+   :alt: unit tests
+.. image:: https://codecov.io/gh/benureau/r5/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/benureau/r5
+   :alt: test coverage
+.. image:: https://readthedocs.org/projects/r5-/badge/?version=latest
+   :target: http://r5-.readthedocs.io/en/latest/?badge=latest
+   :alt: documentation
+.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.848285.svg
+   :target: https://doi.org/10.5281/zenodo.848285
+   :alt: doi
 
-This is the documentation for the code of the article "Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions"
-by `Fabien C. Y. Benureau`__ and `Nicolas P. Rougier`__. This code is meant as an example of a :math:`\textrm{R}^4` implementation: re-runnable, repeatable, reproducible, and reusable.
+This is the documentation for the repository for the article **Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions**
+by `Fabien C. Y. Benureau`__ and `Nicolas P. Rougier`__. This code is meant as an example of a full R^4 implementation: re-runnable, repeatable, reproducible, and reusable. A repository with the five codes presented in the article is available at `github.com/rougier/random-walk`__ (`10.5281/zenodo.848221`__).
 
 __ https://fabien.benureau.com
 __ https://www.labri.fr/perso/nrougier/
+__ https://github.com/rougier/random-walk
+__ https://doi.org/10.5281/zenodo.848221
 
 This code exposes two central functions, :func:`r5.walk` that generates the walk, and :func:`r5.walk_full` that generates the walk and returns it with full provenance data (parameters, python version, platform, git hash):
 
